@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styling.css" > 
+    
+</head>
+
+<body>
+        <br><br><br><br><br>
+    <h3>
+        <center>Open New Bank Account</center>
+    </h3>
+    
+        <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Account Details')">Account Details</button>
+        <button class="tablinks" onclick="openCity(event, 'Withdraw')">Withdraw</button>
+        <button class="tablinks" onclick="openCity(event, 'Deposit')">Deposit</button>
+        <button class="tablinks" onclick="openCity(event, 'Check Balance')">Check Balance</button>
+        <button class="tablinks" onclick="openCity(event, 'Fund Transfer')">Fund Transfer</button>
+        <button class="tablinks" onclick="openCity(event, 'Delete')">Delete Bank Account</button>
+        </div>
+        
+  
+    <div class="container">
+        <form action="addNewBankAccount.do" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+
+
+
+            <label for="account">Account type</label>
+            <select id="account" name="account">
+                <option value="Savings">Savings</option>
+                <option value="Current">Current</option>
+            </select>
+
+
+            
+            <label for="balance">Balance</label>
+            <input type="text" placeholder="Balance" name="balance" maxlength="10" />
+
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

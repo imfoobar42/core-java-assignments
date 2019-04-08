@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+html {
+  background: url(pic.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=date], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Your Account</h2>
+<p>Choose from the operations below:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Account Details')">Account Details</button>
+  <button class="tablinks" onclick="openCity(event, 'Withdraw')">Withdraw</button>
+  <button class="tablinks" onclick="openCity(event, 'Deposit')">Deposit</button>
+  <button class="tablinks" onclick="openCity(event, 'Check Balance')">Check Balance</button>
+  <button class="tablinks" onclick="openCity(event, 'Fund Transfer')">Fund Transfer</button>
+  <button class="tablinks" onclick="openCity(event, 'Delete')">Delete Bank Account</button>
+  
+</div>
+
+<div id="Account Details" class="tabcontent">
+  <h3>Account Details</h3>
+  <p>Hello, Akash Singh.</p>
+  <p>Your Savings Account No is 005100100023786</p>
+  <p>BALANCE : 10000 ₹</p>
+</div>
+
+<div id="Withdraw" class="tabcontent">
+  <h3>Withdraw</h3>
+  <label for="Account Number">Account Number</label>
+  <p>  <input type="text" placeholder="Account Number.." maxlength="15" />
+  </p>
+  <label for="Amount">Amount</label>
+  <p>  <input type="text" placeholder="Amount.." maxlength="5" />
+  </p>
+  <p>
+    <input type="submit" value="Withdraw">
+  </p>
+    <p><h3>Note : Transfer of Amount is subject to the available balance.</h3></p> 
+</div>
+
+<div id="Deposit" class="tabcontent">
+  <h3>Deposit</h3>
+  <label for="Account Number">Account Number</label>
+  <p>  <input type="text" placeholder="Account Number.." maxlength="15" />
+  </p>
+  <label for="Amount">Amount</label>
+  <p>  <input type="text" placeholder="Amount.." maxlength="5" />
+  </p>
+  <p>
+    <input type="submit" value="Deposit">
+  </p>
+</div>
+
+<div id="Check Balance" class="tabcontent">
+    <h3>Account Balance</h3>
+    <p>Your Account Balance is  100000 ₹.</p>
+  </div>
+  
+<div id="Fund Transfer" class="tabcontent">
+    <h3>Transfer Amount to any Valid account throughtout India</h3>
+        <label for="Account Number">Your Account Number</label>
+        <p>  <input type="text" placeholder="Your Account Number.." maxlength="15" />
+        </p>
+
+        <label for="Account Number">Receiver Account Number</label>
+        <p>  <input type="text" placeholder="Receiver Account Number.." maxlength="15" />
+        </p>
+        <label for="Amount">Amount</label>
+        <p>  <input type="text" placeholder="Amount.." maxlength="5" />
+        </p>
+        <p>
+          <input type="submit" value="Send">
+        </p>
+          <p><h3>Note : Transfer of Amount is subject to the available balance.</h3></p> 
+      </div>
+  </div>
+  <div id="Delete" class="tabcontent">
+    <h3>Delete Account</h3>
+    <label for="Account Number">Account Number</label>
+    <p>  <input type="text" placeholder="Account Number.." maxlength="15" />
+    </p>
+    
+      <input type="submit" value="Delete">
+    </p>
+      <p><h3>Note : Account Once Deleted, Cannot be recovered.</h3></p> 
+  </div>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 

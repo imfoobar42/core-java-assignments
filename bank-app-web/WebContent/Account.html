@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/styling.css" > 
+</head>
+
+<body>
+
+  <h2>Your Account</h2>
+  <p>Choose from the operations below:</p>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Open Account')">Open Account</button>
+    <button class="tablinks" onclick="openCity(event, 'Withdraw')">Withdraw</button>
+    <button class="tablinks" onclick="openCity(event, 'Deposit')">Deposit</button>
+    <button class="tablinks" onclick="openCity(event, 'Check Balance')">Check Balance</button>
+    <button class="tablinks" onclick="openCity(event, 'Fund Transfer')">Fund Transfer</button>
+    <button class="tablinks" onclick="openCity(event, 'Delete')">Delete Bank Account</button>
+
+  </div>
+
+
+
+  <div id ="Open Account" class="tabcontent">
+    <form action="addNewBankAccount.do" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+
+
+
+      <label for="account">Account type</label>
+      <select id="account" name="account">
+        <option value="Savings">Savings</option>
+        <option value="Current">Current</option>
+      </select>
+
+
+
+      <label for="balance">Balance</label>
+      <input type="text" placeholder="Balance" name="balance" maxlength="10" />
+
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+
+
+
+  <div id="Withdraw" class="tabcontent">
+    <h3>Withdraw</h3>
+    <label for="Account Number">Account Number</label>
+    <p> <input type="text" placeholder="Account Number.." maxlength="15" />
+    </p>
+    <label for="Amount">Amount</label>
+    <p> <input type="text" placeholder="Amount.." maxlength="5" />
+    </p>
+    <p>
+      <input type="submit" value="Withdraw">
+    </p>
+    <p>
+      <h3>Note : Transfer of Amount is subject to the available balance.</h3>
+    </p>
+  </div>
+
+
+
+  <div id="Deposit" class="tabcontent">
+    <h3>Deposit</h3>
+    <label for="Account Number">Account Number</label>
+    <p> <input type="text" placeholder="Account Number.." maxlength="15" />
+    </p>
+    <label for="Amount">Amount</label>
+    <p> <input type="text" placeholder="Amount.." maxlength="5" />
+    </p>
+    <p>
+      <input type="submit" value="Deposit">
+    </p>
+  </div>
+
+  <div id="Check Balance" class="tabcontent">
+    <h3>Account Balance</h3>
+    <p>Your Account Balance is 100000 ₹.</p>
+  </div>
+  <div id="Fund Transfer" class="tabcontent">
+    <h3>Transfer Amount to any Valid account throughtout India</h3>
+    <label for="Account Number">Your Account Number</label>
+    <p> <input type="text" placeholder="Your Account Number.." maxlength="15" />
+    </p>
+
+    <label for="Account Number">Receiver Account Number</label>
+    <p> <input type="text" placeholder="Receiver Account Number.." maxlength="15" />
+    </p>
+    <label for="Amount">Amount</label>
+    <p> <input type="text" placeholder="Amount.." maxlength="5" />
+    </p>
+    <p>
+      <input type="submit" value="Send">
+    </p>
+    <p>
+      <h3>Note : Transfer of Amount is subject to the available balance.</h3>
+    </p>
+  </div>
+  </div>
+
+
+  <div id="Delete" class="tabcontent">
+    <h3>Delete Account</h3>
+    <label for="Account Number">Account Number</label>
+    <p> <input type="text" placeholder="Account Number.." maxlength="15" />
+    </p>
+
+    <input type="submit" value="Delete">
+    </p>
+    <p>
+      <h3>Note : Account Once Deleted, Cannot be recovered.</h3>
+    </p>
+  </div>
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
+</body>
+
+</html>
